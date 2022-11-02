@@ -2,6 +2,8 @@ public class Player {
     private String name;
     private double battingAVG;
     private double homeRunPercentage;
+    Player previous;
+    Player next;
 
     @Override
     public String toString() {

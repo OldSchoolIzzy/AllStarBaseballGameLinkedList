@@ -2,27 +2,13 @@ import java.util.LinkedList;
 
 public class Game {
     private int inning = 3;
-    private int score;
-    private int runs;
-    private int hits;
 
-    @Override
-    public String toString() {
-        return "Game{" +
-                "inning=" + inning +
-                ", score=" + score +
-                ", runs=" + runs +
-                ", hits=" + hits +
-                ", players=" + players +
-                '}';
-    }
-
+    private int outs = 3;
+    private int score = 0;
+    private int runs = 0;
+    private int hits = 0;
     LinkedList<Player> players;
-
-    public Game(int score, int runs, int hits, LinkedList<Player> players) {
-        this.score = score;
-        this.runs = runs;
-        this.hits = hits;
+    public Game(LinkedList<Player> players) {
         this.players = players;
     }
 
@@ -32,6 +18,14 @@ public class Game {
 
     public void setInning(int inning) {
         this.inning = inning;
+    }
+
+    public int getOuts() {
+        return outs;
+    }
+
+    public void setOuts(int outs) {
+        this.outs = outs;
     }
 
     public int getScore() {
@@ -64,5 +58,16 @@ public class Game {
 
     public void setPlayers(LinkedList<Player> players) {
         this.players = players;
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "inning=" + inning +
+                ", score=" + score +
+                ", runs=" + runs +
+                ", hits=" + hits +
+                ", players=" + players +
+                '}';
     }
 }
