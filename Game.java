@@ -7,8 +7,8 @@ public class Game {
     private int score = 0;
     private int runs = 0;
     private int hits = 0;
-    LinkedList<Player> players;
-    public Game(LinkedList<Player> players) {
+    DoubleLinkedList players;
+    public Game(DoubleLinkedList players) {
         this.players = players;
     }
 
@@ -52,11 +52,11 @@ public class Game {
         this.hits = hits;
     }
 
-    public LinkedList<Player> getPlayers() {
+    public DoubleLinkedList getPlayers() {
         return players;
     }
 
-    public void setPlayers(LinkedList<Player> players) {
+    public void setPlayers(DoubleLinkedList players) {
         this.players = players;
     }
 
