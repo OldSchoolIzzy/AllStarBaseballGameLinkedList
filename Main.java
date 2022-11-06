@@ -3,8 +3,13 @@ import java.util.LinkedList;
 public class Main {
     public static void main(String[] args) {
         DoubleLinkedList players = getPlayers();
-        players.printNodes();
         Game game = new Game(players);
+        game.playInning();
+
+        // while again equals yes
+        // inning +1
+        // while outs does not equal to 3, keep playing/batting
+        //
     }
 
     private static DoubleLinkedList getPlayers() {

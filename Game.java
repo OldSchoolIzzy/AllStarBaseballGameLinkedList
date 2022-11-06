@@ -1,7 +1,7 @@
-import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Game {
-    private int inning = 3;
+    private int inning = 0;
 
     private int outs = 3;
     private int score = 0;
@@ -12,20 +12,26 @@ public class Game {
         this.players = players;
     }
 
+    public void playInning(){
+        Scanner scan = new Scanner(System.in);
+        String again = "yes";
+        while (again.equalsIgnoreCase("yes")){
+            inning++;
+            int numOfOuts = 0;
+            while(numOfOuts != outs){
+                printNodes();
+                numOfOuts++;
+            }
+            System.out.println("Would you like to run again?");
+            again = scan.next();
+        }
+    }
     public int getInning() {
         return inning;
     }
 
     public void setInning(int inning) {
         this.inning = inning;
-    }
-
-    public int getOuts() {
-        return outs;
-    }
-
-    public void setOuts(int outs) {
-        this.outs = outs;
     }
 
     public int getScore() {
@@ -58,6 +64,29 @@ public class Game {
 
     public void setPlayers(DoubleLinkedList players) {
         this.players = players;
+    }
+    public void printNodes(){
+        Player current = players.head;
+        if (players.head == null){
+            System.out.println("Doubly linked list is empty");
+            return;
+        }
+        while (current != null){
+            double randomNumber = Math.random();
+
+            if (randomNumber < current.getBattingAVG() && randomNumber > current.getHomeRunPercentage()){
+                System.out.println("PLayer name: " + current.getName() + " BA: " + current.getBattingAVG() +
+                        " Random number: " + randomNumber + " HIT!");
+            }
+            else if (randomNumber < current.getHomeRunPercentage()) {
+                System.out.println("PLayer name: " + current.getName() + " BA: " + current.getBattingAVG() +
+                        " Random number: " + randomNumber + " RUN!");
+            } else{
+                System.out.println("PLayer name: " + current.getName() + " BA: " + current.getBattingAVG() +
+                        " Random number: " + randomNumber + " OUT!");
+            }
+            current = current.next;
+        }
     }
 
     @Override
