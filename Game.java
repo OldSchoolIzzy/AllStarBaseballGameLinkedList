@@ -18,7 +18,8 @@ public class Game {
             System.out.println("Inning: " + inning + " Score: " + runs + " runs");
             int numOfOuts = 0;
             int hits = 0;
-            
+            int onBase = 0;
+
             while(numOfOuts != outs) {
                 Player current = players.head;
                 if (players.head == null){
@@ -36,12 +37,19 @@ public class Game {
                         if (randomNumber < current.getBattingAVG() && randomNumber > current.getHomeRunPercentage()){
                             System.out.println("PLayer name: " + current.getName() + " BA: " + current.getBattingAVG() +
                                     " Random number: " + randomNumber + " HIT!");
-                            hits++;
+                            if (onBase >= 3){
+                                runs++;
+                            }else {
+                                onBase++;
+                                hits++;
+                            }
                         }
                         else if (randomNumber < current.getHomeRunPercentage()) {
                             System.out.println("PLayer name: " + current.getName() + " BA: " + current.getBattingAVG() +
                                     " Random number: " + randomNumber + " RUN!");
+                            runs += onBase;
                             runs++;
+                            onBase = 0;
                         }
                         else{
                             System.out.println("PLayer name: " + current.getName() + " BA: " + current.getBattingAVG() +
