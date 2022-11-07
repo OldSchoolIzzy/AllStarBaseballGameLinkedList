@@ -5,7 +5,6 @@ public class Game {
     private int inning = 0;
     private int outs = 3;
     private int runs = 0;
-    private int hits = 0;
     DoubleLinkedList players;
     public Game(DoubleLinkedList players) {
         this.players = players;
@@ -18,6 +17,8 @@ public class Game {
             inning++;
             System.out.println("Inning: " + inning + " Score: " + runs + " runs");
             int numOfOuts = 0;
+            int hits = 0;
+            
             while(numOfOuts != outs) {
                 Player current = players.head;
                 if (players.head == null){
@@ -52,6 +53,8 @@ public class Game {
                 }
             }
             System.out.println("Inning totals--- " + "Runs: " + runs + " Hits: " + hits);
+            System.out.println("Game score: " + runs + " runs");
+
             System.out.println("Would you like to run again?");
             again = scan.next();
         }
@@ -73,14 +76,6 @@ public class Game {
         this.runs = runs;
     }
 
-    public int getHits() {
-        return hits;
-    }
-
-    public void setHits(int hits) {
-        this.hits = hits;
-    }
-
     public DoubleLinkedList getPlayers() {
         return players;
     }
@@ -93,7 +88,6 @@ public class Game {
         return "Game{" +
                 "inning=" + inning +
                 ", runs=" + runs +
-                ", hits=" + hits +
                 ", players=" + players +
                 '}';
     }
