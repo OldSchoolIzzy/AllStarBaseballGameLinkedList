@@ -37,11 +37,10 @@ public class Game {
                         if (randomNumber < current.getBattingAVG() && randomNumber > current.getHomeRunPercentage()){
                             System.out.println("PLayer name: " + current.getName() + " BA: " + current.getBattingAVG() +
                                     " Random number: " + randomNumber + " HIT!");
-                            if (onBase >= 3){
+                            onBase++;
+                            hits++;
+                            if (onBase == 3){
                                 runs++;
-                            }else {
-                                onBase++;
-                                hits++;
                             }
                         }
                         else if (randomNumber < current.getHomeRunPercentage()) {
