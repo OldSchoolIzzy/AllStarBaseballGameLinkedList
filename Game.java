@@ -15,7 +15,7 @@ public class Game {
         String again = "yes";
         while (again.equalsIgnoreCase("yes")){
             inning++;
-            System.out.println("Inning: " + inning + " Score: " + runs + " runs");
+            System.out.println("Inning: " + inning + " \tScore: " + runs + " runs");
             int numOfOuts = 0;
             int hits = 0;
             int onBase = 0;
@@ -39,8 +39,9 @@ public class Game {
                                     " Random number: " + randomNumber + " HIT!");
                             onBase++;
                             hits++;
-                            if (onBase == 3){
+                            if (onBase > 3){
                                 runs++;
+                                onBase--;
                             }
                         }
                         else if (randomNumber < current.getHomeRunPercentage()) {
