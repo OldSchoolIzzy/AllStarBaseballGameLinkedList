@@ -4,7 +4,7 @@ public class Main {
         DoubleLinkedList players = getPlayers();
         Game game = new Game(players);
         game.playInning();
-        
+
     }
 
     private static DoubleLinkedList getPlayers() {
