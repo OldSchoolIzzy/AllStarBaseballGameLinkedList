@@ -68,29 +68,7 @@ public class Game {
         }
         System.out.println("Game over. Game score: " + runs + " runs");
     }
-    public int getInning() {
-        return inning;
-    }
 
-    public void setInning(int inning) {
-        this.inning = inning;
-    }
-
-    public int getRuns() {
-        return runs;
-    }
-
-    public void setRuns(int runs) {
-        this.runs = runs;
-    }
-
-    public DoubleLinkedList getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(DoubleLinkedList players) {
-        this.players = players;
-    }
     @Override
     public String toString() {
         return "Game{" +

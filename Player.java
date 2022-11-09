@@ -24,16 +24,8 @@ public class Player {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getBattingAVG() {
         return battingAVG;
-    }
-
-    public void setBattingAVG(double battingAVG) {
-        this.battingAVG = battingAVG;
     }
 
     public double getHomeRunPercentage() {

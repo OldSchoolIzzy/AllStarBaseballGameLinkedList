@@ -4,9 +4,7 @@ public class Main {
         DoubleLinkedList players = getPlayers();
         Game game = new Game(players);
         game.playInning();
-
     }
-
     private static DoubleLinkedList getPlayers() {
         DoubleLinkedList players = new DoubleLinkedList();
         players.addNode("Ted Williams", 0.344, 0.0687);
